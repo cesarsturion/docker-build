@@ -15,9 +15,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
+    -name: Echo var
+     run: |
+      echo ${{ inputs.image_name }}
+
     - name: Build and push the Docker image
       env:
-        IMAGE_NAME: '${{ inputs.image_name }}'
+        IMAGE_NAME: ${{ inputs.image_name }}
       run: |
         docker build -t vissimo/$IMAGE_NAME:latest .
 
