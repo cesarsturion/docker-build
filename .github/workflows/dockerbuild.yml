@@ -19,7 +19,7 @@ jobs:
       env:
         IMAGE_NAME: '${{ inputs.image_name }}'
       run: |
-        docker build -t vissimo/$image_name:latest .
+        docker build -t vissimo/$IMAGE_NAME:latest .
 
 
 
