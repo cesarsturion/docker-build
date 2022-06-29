@@ -3,7 +3,7 @@ name: Reusable workflow Docker build and push to ECR
 on:
   workflow_call:
     inputs:
-      ecr_repository:
+      image_name:
         required: true
         type: string
 
@@ -17,9 +17,9 @@ jobs:
 
     - name: Build and push the Docker image
       env:
-        ECR_REPOSITORY: '${{ inputs.ecr_repository }}'
+        IMAGE_NAME: '${{ inputs.image_name }}'
       run: |
-        docker build -t evino/$ECR_REPOSITORY:latest .
+        docker build -t vissimo/$image_name:latest .
 
 
 
